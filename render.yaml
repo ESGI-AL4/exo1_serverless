@@ -19,7 +19,7 @@ services:
       - key: DB_URL
         fromDatabase:
             name: exo1_serverless_bdd-3
-            property: connectionStrings
+            property: connectionString
     region: oregon
     buildCommand: npm i
     startCommand: npm start
