@@ -1,26 +1,22 @@
-databases:
-- name: exo1.serverless.bdd.3
-  databaseName: exo1.serverless.bdd.3
-  user: exo1_serverless_bdd_user
-  plan: free
-  region: oregon
-  ipAllowList:
-    - source: 0.0.0.0/0
-      description: everywhere
-  postgresMajorVersion: "16"
-
 services:
   - type: web
-    name: exo1_serverless-3
+    name: bp-app
     runtime: node
     repo: https://github.com/ESGI-AL4/exo1_serverless
-    plan: free
-    envVars:
-      - key: DB_URL
-        fromDatabase:
-            name: exo1.serverless.bdd.3
-            property: connectionString
-    region: oregon
     buildCommand: npm i
     startCommand: npm start
-version: "1"
+    region: frankfurt
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: bp-db
+          property: connectionString
+
+
+databases:
+- name: bp-db
+  plan: free
+  region: frankfurt
+
+
