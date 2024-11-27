@@ -17,7 +17,9 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        sync: false
+        fromDatabase:
+            name: exo1_serverless_bdd-3
+            property: connectionStrings
     region: oregon
     buildCommand: npm i
     startCommand: npm start
