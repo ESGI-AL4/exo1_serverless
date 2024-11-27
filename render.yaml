@@ -1,6 +1,6 @@
 databases:
-- name: exo1_serverless_bdd
-  databaseName: exo1_serverless_bdd
+- name: exo1_serverless_bdd-3
+  databaseName: exo1_serverless_bdd-3
   user: exo1_serverless_bdd_user
   plan: free
   region: oregon
@@ -11,7 +11,7 @@ databases:
 
 services:
   - type: web
-    name: exo1_serverless
+    name: exo1_serverless-3
     runtime: node
     repo: https://github.com/ESGI-AL4/exo1_serverless
     plan: free
